@@ -33,10 +33,10 @@ export async function GET(req: NextRequest) {
   }
 
   // Get all non-admin profiles
+  // Get all profiles (students and admins)
   const { data: profiles } = await supabaseAdmin
     .from("profiles")
     .select("id, full_name, email, is_admin")
-    .eq("is_admin", false)
     .order("full_name");
 
   // Get all completed quiz attempts
@@ -58,6 +58,7 @@ export async function GET(req: NextRequest) {
       id: p.id,
       full_name: p.full_name || "—",
       email: p.email,
+      is_admin: p.is_admin,
       preassessment_date: preAttempt?.completed_at ?? null,
       preassessment_score: preAttempt?.score_percent ?? null,
       practice_count: practiceAttempts.length,

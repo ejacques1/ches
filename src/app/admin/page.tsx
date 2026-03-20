@@ -11,6 +11,7 @@ interface StudentRow {
   id: string;
   full_name: string;
   email: string;
+  is_admin: boolean;
   preassessment_date: string | null;
   preassessment_score: number | null;
   practice_count: number;
@@ -78,6 +79,26 @@ export default function AdminPage() {
       s.full_name.toLowerCase().includes(search.toLowerCase()) ||
       s.email.toLowerCase().includes(search.toLowerCase())
   );
+
+  const toggleAdmin = async (userId: string, currentIsAdmin: boolean) => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return;
+
+    const res = await fetch("/api/admin/promote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
+      },
+      body: JSON.stringify({ user_id: userId, is_admin: !currentIsAdmin }),
+    });
+
+    if (res.ok) {
+      setStudents((prev) =>
+        prev.map((s) => (s.id === userId ? { ...s, is_admin: !currentIsAdmin } : s))
+      );
+    }
+  };
 
   // Find weakest areas (sorted by score ascending)
   const weakestAreas = metrics?.class_area_scores
@@ -286,6 +307,7 @@ export default function AdminPage() {
                     <tr className="text-left text-gray-500 border-b bg-gray-50">
                       <th className="px-4 py-3 font-medium">Name</th>
                       <th className="px-4 py-3 font-medium">Email</th>
+                      <th className="px-4 py-3 font-medium">Role</th>
                       <th className="px-4 py-3 font-medium">Pre-Assessment</th>
                       <th className="px-4 py-3 font-medium">Practice Attempts</th>
                       <th className="px-4 py-3 font-medium">Latest Score</th>
@@ -293,16 +315,32 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {filtered.map((s) => (
-                      <tr key={s.id} className="border-b border-gray-50 hover:bg-gray-50">
+                      <tr key={s.id} className={`border-b border-gray-50 hover:bg-gray-50 ${s.is_admin ? "bg-yellow-50" : ""}`}>
                         <td className="px-4 py-3">
-                          <Link
-                            href={`/admin/student/${s.id}`}
-                            className="text-york-red font-medium hover:underline"
-                          >
-                            {s.full_name}
-                          </Link>
+                          {s.is_admin ? (
+                            <span className="font-medium text-gray-700">{s.full_name}</span>
+                          ) : (
+                            <Link
+                              href={`/admin/student/${s.id}`}
+                              className="text-york-red font-medium hover:underline"
+                            >
+                              {s.full_name}
+                            </Link>
+                          )}
                         </td>
                         <td className="px-4 py-3 text-gray-600">{s.email}</td>
+                        <td className="px-4 py-3">
+                          <button
+                            onClick={() => toggleAdmin(s.id, s.is_admin)}
+                            className={`text-xs px-2.5 py-1 rounded-full font-medium transition ${
+                              s.is_admin
+                                ? "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
+                                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                            }`}
+                          >
+                            {s.is_admin ? "Admin" : "Student"}
+                          </button>
+                        </td>
                         <td className="px-4 py-3">
                           {s.preassessment_score !== null ? (
                             <span className={`font-semibold ${getScoreColor(s.preassessment_score)}`}>
@@ -326,7 +364,7 @@ export default function AdminPage() {
                     ))}
                     {filtered.length === 0 && (
                       <tr>
-                        <td colSpan={5} className="px-4 py-8 text-center text-gray-400">
+                        <td colSpan={6} className="px-4 py-8 text-center text-gray-400">
                           No students found
                         </td>
                       </tr>
