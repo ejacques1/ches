@@ -104,6 +104,9 @@ export default function Navbar() {
             <Link href="/study-guide" className="text-sm text-gray-600 hover:text-york-red transition">
               Study Guide
             </Link>
+            <Link href="/faq" className="text-sm text-gray-600 hover:text-york-red transition">
+              FAQ
+            </Link>
 
             {/* View toggle for admins */}
             {isAdmin && (
@@ -163,6 +166,9 @@ export default function Navbar() {
               )}
               <Link href="/study-guide" className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded" onClick={() => setMenuOpen(false)}>
                 Study Guide
+              </Link>
+              <Link href="/faq" className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded" onClick={() => setMenuOpen(false)}>
+                FAQ
               </Link>
 
               {/* View toggle for admins (mobile) */}
