@@ -15,15 +15,17 @@ export default function AdminGuard({ children }: { children: React.ReactNode }) 
         router.push("/login");
         return;
       }
-      const { data } = await supabase
-        .from("profiles")
-        .select("is_admin")
-        .eq("id", session.user.id)
-        .single();
-      if (!data?.is_admin) {
+
+      // Use server-side check to bypass RLS
+      const res = await fetch("/api/admin/check", {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
+
+      if (!res.ok) {
         router.push("/dashboard");
         return;
       }
+
       setAuthorized(true);
     };
     check();

@@ -24,42 +24,17 @@ export default function AdminPage() {
 
   useEffect(() => {
     const load = async () => {
-      // Get all non-admin profiles
-      const { data: profiles } = await supabase
-        .from("profiles")
-        .select("id, full_name, email, is_admin")
-        .eq("is_admin", false)
-        .order("full_name");
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) { setLoading(false); return; }
 
-      if (!profiles) { setLoading(false); return; }
-
-      // Get all completed quiz attempts
-      const { data: attempts } = await supabase
-        .from("quiz_attempts")
-        .select("id, user_id, quiz_type, score_percent, completed_at")
-        .not("completed_at", "is", null)
-        .order("completed_at", { ascending: false });
-
-      const studentRows: StudentRow[] = profiles.map((p) => {
-        const userAttempts = attempts?.filter((a) => a.user_id === p.id) ?? [];
-        const preAttempt = userAttempts.find((a) => a.quiz_type === "preassessment");
-        const practiceAttempts = userAttempts.filter(
-          (a) => a.quiz_type === "area" || a.quiz_type === "comprehensive"
-        );
-        const latestPractice = practiceAttempts[0];
-
-        return {
-          id: p.id,
-          full_name: p.full_name || "—",
-          email: p.email,
-          preassessment_date: preAttempt?.completed_at ?? null,
-          preassessment_score: preAttempt?.score_percent ?? null,
-          practice_count: practiceAttempts.length,
-          latest_practice_score: latestPractice?.score_percent ?? null,
-        };
+      const res = await fetch("/api/admin/students", {
+        headers: { Authorization: `Bearer ${session.access_token}` },
       });
 
-      setStudents(studentRows);
+      if (!res.ok) { setLoading(false); return; }
+
+      const data = await res.json();
+      setStudents(data.students);
       setLoading(false);
     };
     load();
