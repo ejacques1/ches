@@ -106,6 +106,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Faculty Support Section */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-york-black mb-3">
+            Supported by Your Faculty
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+            CHES Study Hub is supported by faculty in the Department of Health and Human Performance
+            at York College, dedicated to helping students succeed on the CHES exam.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-8">
+          {[
+            { name: "Dr. Erin Jacques", initials: "EJ" },
+            { name: "Dr. Nicole Grosskopf", initials: "NG" },
+            { name: "Dr. Elizabeth Vignola", initials: "EV" },
+          ].map((faculty) => (
+            <div key={faculty.initials} className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-york-red-light flex items-center justify-center mb-3">
+                <span className="text-york-red font-bold text-lg">{faculty.initials}</span>
+              </div>
+              <p className="font-semibold text-york-black text-sm">{faculty.name}</p>
+              <p className="text-xs text-gray-400">Faculty Advisor</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-york-black text-white py-8">
         <div className="max-w-5xl mx-auto px-6 text-center text-sm opacity-70">
