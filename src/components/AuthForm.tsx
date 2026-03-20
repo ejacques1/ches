@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/auth";
+import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 
 interface AuthFormProps {
@@ -40,6 +41,22 @@ export default function AuthForm({ mode }: AuthFormProps) {
       if (signInError) {
         setError(signInError.message);
       } else {
+        // Check if admin and redirect accordingly
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          try {
+            const res = await fetch("/api/admin/check", {
+              headers: { Authorization: `Bearer ${session.access_token}` },
+            });
+            if (res.ok) {
+              router.push("/admin");
+              setLoading(false);
+              return;
+            }
+          } catch {
+            // Not admin, continue to dashboard
+          }
+        }
         router.push("/dashboard");
       }
     }
