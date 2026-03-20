@@ -80,6 +80,11 @@ export default function DashboardPage() {
         .limit(1);
 
       if (!preAttempts || preAttempts.length === 0) {
+        // Admins viewing as student don't need to take pre-assessment
+        if (profile?.is_admin) {
+          setLoading(false);
+          return;
+        }
         router.push("/preassessment");
         return;
       }
