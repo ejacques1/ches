@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CHES Study Hub — York College Public Health",
+  title: "CHES Study Hub — York College Health and Human Performance",
   description:
     "Prepare for the Certified Health Education Specialist exam. Assess your knowledge across the 8 Areas of Responsibility.",
 };

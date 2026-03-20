@@ -56,7 +56,7 @@ export default function ResetPasswordPage() {
       <div className="max-w-md w-full bg-white rounded-xl shadow-md p-8">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-york-red">CHES Study Hub</h1>
-          <p className="text-sm text-gray-500 mt-1">York College — Public Health</p>
+          <p className="text-sm text-gray-500 mt-1">York College — Health and Human Performance</p>
           <h2 className="text-xl font-semibold text-york-black mt-4">Reset Password</h2>
         </div>
 

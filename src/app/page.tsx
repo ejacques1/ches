@@ -19,7 +19,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">CHES Study Hub</h1>
           <p className="text-lg md:text-xl opacity-90 mb-2">
-            York College — Department of Public Health
+            York College — Department of Health and Human Performance
           </p>
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto mt-4 mb-10">
             Prepare for the Certified Health Education Specialist exam. Assess your
@@ -109,7 +109,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-york-black text-white py-8">
         <div className="max-w-5xl mx-auto px-6 text-center text-sm opacity-70">
-          <p>CHES Study Hub — York College, Department of Public Health</p>
+          <p>CHES Study Hub — York College, Department of Health and Human Performance</p>
           <p className="mt-1">
             Preparing future Certified Health Education Specialists
           </p>
