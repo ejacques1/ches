@@ -15,12 +15,14 @@ export default function Navbar() {
     const checkAdmin = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        const { data } = await supabase
-          .from("profiles")
-          .select("is_admin")
-          .eq("id", session.user.id)
-          .single();
-        if (data?.is_admin) setIsAdmin(true);
+        try {
+          const res = await fetch("/api/admin/check", {
+            headers: { Authorization: `Bearer ${session.access_token}` },
+          });
+          if (res.ok) setIsAdmin(true);
+        } catch {
+          // Not admin or error
+        }
       }
     };
     checkAdmin();
