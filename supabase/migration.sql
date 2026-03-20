@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS quiz_answers (
   question_id INTEGER NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
   selected_answer CHAR(1) NOT NULL CHECK (selected_answer IN ('a', 'b', 'c', 'd')),
   is_correct BOOLEAN NOT NULL,
-  area_id INTEGER NOT NULL
+  area_id INTEGER NOT NULL,
+  time_spent_seconds INTEGER NOT NULL DEFAULT 0
 );
 
 -- 5. Pre-assessment scores view

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { getAreaName } from "@/lib/constants";
@@ -35,8 +35,13 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
   const [error, setError] = useState("");
+  const questionStartTime = useRef<number>(Date.now());
 
   const isPreassessment = quizType === "preassessment";
+
+  const resetQuestionTimer = useCallback(() => {
+    questionStartTime.current = Date.now();
+  }, []);
 
   const getToken = async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -71,11 +76,14 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
     setAttemptId(data.attempt_id);
     setQuestions(data.questions);
     setCurrentIndex(0);
+    resetQuestionTimer();
     setPhase("quiz");
   };
 
   const submitAnswer = async () => {
     if (!selectedAnswer || !attemptId) return;
+
+    const timeSpent = Math.round((Date.now() - questionStartTime.current) / 1000);
 
     const token = await getToken();
     const res = await fetch("/api/quiz/answer", {
@@ -88,6 +96,7 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
         attempt_id: attemptId,
         question_id: questions[currentIndex].id,
         selected_answer: selectedAnswer,
+        time_spent_seconds: timeSpent,
       }),
     });
 
@@ -114,6 +123,7 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
       completeQuiz();
     } else {
       setCurrentIndex(currentIndex + 1);
+      resetQuestionTimer();
     }
   };
 

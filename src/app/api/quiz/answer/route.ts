@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { attempt_id, question_id, selected_answer } = await req.json();
+  const { attempt_id, question_id, selected_answer, time_spent_seconds } = await req.json();
 
   if (!attempt_id || !question_id || !selected_answer) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -75,6 +75,7 @@ export async function POST(req: NextRequest) {
     selected_answer,
     is_correct,
     area_id: question.area_id,
+    time_spent_seconds: time_spent_seconds || 0,
   });
 
   // For preassessment, don't reveal the correct answer
