@@ -17,8 +17,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-gray-50 text-york-black min-h-screen`}>
-        {children}
+      <body className={`${inter.className} antialiased bg-gray-50 text-york-black min-h-screen flex flex-col`}>
+        <div className="flex-1">
+          {children}
+        </div>
+        <footer className="border-t border-gray-200 bg-white py-4 mt-8">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <p className="text-xs text-gray-400">
+              CHES Study Hub — Department of Health and Human Performance, York College
+            </p>
+            <p className="text-xs text-gray-400 mt-1">
+              Dr. Erin Jacques · Dr. Nicole Grosskopf · Dr. Elizabeth Vignola
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );

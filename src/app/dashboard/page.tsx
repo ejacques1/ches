@@ -416,6 +416,41 @@ export default function DashboardPage() {
           </div>
         </div>
 
+        {/* Your CHES Prep Team */}
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h2 className="font-semibold text-york-black mb-1">Your CHES Prep Team</h2>
+          <p className="text-xs text-gray-400 mb-4">Need help? Your faculty advisors are here to support you.</p>
+          <div className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-york-red-light flex items-center justify-center">
+                <span className="text-york-red font-bold text-sm">EJ</span>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-york-black">Dr. Erin Jacques</p>
+                <p className="text-xs text-gray-400">Faculty Advisor</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-york-red-light flex items-center justify-center">
+                <span className="text-york-red font-bold text-sm">NG</span>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-york-black">Dr. Nicole Grosskopf</p>
+                <p className="text-xs text-gray-400">Faculty Advisor</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-york-red-light flex items-center justify-center">
+                <span className="text-york-red font-bold text-sm">EV</span>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-york-black">Dr. Elizabeth Vignola</p>
+                <p className="text-xs text-gray-400">Faculty Advisor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Practice History */}
         {practiceAttempts.length > 0 && (
           <div className="bg-white rounded-xl shadow-md p-6">
