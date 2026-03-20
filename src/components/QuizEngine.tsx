@@ -35,6 +35,7 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const questionStartTime = useRef<number>(Date.now());
 
   const isPreassessment = quizType === "preassessment";
@@ -81,7 +82,9 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
   };
 
   const submitAnswer = async () => {
-    if (!selectedAnswer || !attemptId) return;
+    if (!selectedAnswer || !attemptId || isSubmitting) return;
+    setIsSubmitting(true);
+    setError("");
 
     const timeSpent = Math.round((Date.now() - questionStartTime.current) / 1000);
 
@@ -102,7 +105,13 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
 
     const data = await res.json();
     if (!res.ok) {
+      // If already answered, just move to next question instead of showing error
+      if (data.error === "Already answered this question") {
+        goToNext();
+        return;
+      }
       setError(data.error || "Failed to submit answer");
+      setIsSubmitting(false);
       return;
     }
 
@@ -112,12 +121,14 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
     } else {
       // Show feedback for practice quizzes
       setFeedback(data);
+      setIsSubmitting(false);
     }
   };
 
   const goToNext = () => {
     setSelectedAnswer(null);
     setFeedback(null);
+    setIsSubmitting(false);
 
     if (currentIndex + 1 >= questions.length) {
       completeQuiz();
@@ -315,10 +326,10 @@ export default function QuizEngine({ quizType, areaId, questionCount }: QuizEngi
       {!feedback ? (
         <button
           onClick={submitAnswer}
-          disabled={!selectedAnswer}
+          disabled={!selectedAnswer || isSubmitting}
           className="w-full bg-york-red text-white py-3 rounded-lg font-semibold hover:bg-york-red-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isPreassessment ? "Next" : "Submit Answer"}
+          {isSubmitting ? "Submitting..." : isPreassessment ? "Next" : "Submit Answer"}
         </button>
       ) : (
         <button
