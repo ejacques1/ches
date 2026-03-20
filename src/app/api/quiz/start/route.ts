@@ -28,10 +28,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid quiz type" }, { status: 400 });
   }
 
-  // Build question query — exclude correct_answer from response
+  // Build question query — exclude correct_answer from response, exclude needs_review questions
   let query = supabaseAdmin
     .from("questions")
-    .select("id, question_text, choice_a, choice_b, choice_c, choice_d, area_id");
+    .select("id, question_text, choice_a, choice_b, choice_c, choice_d, area_id")
+    .eq("needs_review", false);
 
   if (quiz_type === "preassessment") {
     query = query.eq("is_preassessment", true);

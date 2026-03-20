@@ -189,11 +189,12 @@ export default function DashboardPage() {
         }
       }
 
-      // Get available question counts per area (non-preassessment)
+      // Get available question counts per area (non-preassessment, exclude needs_review)
       const { data: questions } = await supabase
         .from("questions")
         .select("area_id")
-        .eq("is_preassessment", false);
+        .eq("is_preassessment", false)
+        .eq("needs_review", false);
 
       if (questions) {
         const counts: Record<number, number> = {};
