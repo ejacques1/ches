@@ -151,6 +151,14 @@ export default function AuthForm({ mode }: AuthFormProps) {
               ? "Sign In"
               : "Create Account"}
           </button>
+
+          {mode === "login" && (
+            <div className="text-center mt-3">
+              <Link href="/reset-password" className="text-sm text-gray-500 hover:text-york-red">
+                Forgot your password?
+              </Link>
+            </div>
+          )}
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">
