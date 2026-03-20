@@ -435,7 +435,7 @@ export default function DashboardPage() {
                 <span className="text-york-red font-bold text-sm">NG</span>
               </div>
               <div>
-                <p className="text-sm font-medium text-york-black">Dr. Nicole Grosskopf</p>
+                <p className="text-sm font-medium text-york-black">Dr. Nicholas Grosskopf</p>
                 <p className="text-xs text-gray-400">Faculty Advisor</p>
               </div>
             </div>
@@ -444,7 +444,7 @@ export default function DashboardPage() {
                 <span className="text-york-red font-bold text-sm">EV</span>
               </div>
               <div>
-                <p className="text-sm font-medium text-york-black">Dr. Elizabeth Vignola</p>
+                <p className="text-sm font-medium text-york-black">Dr. Emilia Vignola</p>
                 <p className="text-xs text-gray-400">Faculty Advisor</p>
               </div>
             </div>

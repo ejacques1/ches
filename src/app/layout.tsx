@@ -27,7 +27,7 @@ export default function RootLayout({
               CHES Study Hub — Department of Health and Human Performance, York College
             </p>
             <p className="text-xs text-gray-400 mt-1">
-              Dr. Erin Jacques · Dr. Nicole Grosskopf · Dr. Elizabeth Vignola
+              Dr. Erin Jacques · Dr. Nicholas Grosskopf · Dr. Emilia Vignola
             </p>
           </div>
         </footer>

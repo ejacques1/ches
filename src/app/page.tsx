@@ -120,8 +120,8 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-8">
           {[
             { name: "Dr. Erin Jacques", initials: "EJ" },
-            { name: "Dr. Nicole Grosskopf", initials: "NG" },
-            { name: "Dr. Elizabeth Vignola", initials: "EV" },
+            { name: "Dr. Nicholas Grosskopf", initials: "NG" },
+            { name: "Dr. Emilia Vignola", initials: "EV" },
           ].map((faculty) => (
             <div key={faculty.initials} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-york-red-light flex items-center justify-center mb-3">
