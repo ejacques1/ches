@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-york-red: #E24B38;
+  --color-york-red-dark: #C73A28;
+  --color-york-red-light: #F5E6E4;
+  --color-york-black: #1A1A1A;
+  --color-score-green: #22C55E;
+  --color-score-yellow: #EAB308;
+  --color-score-red: #EF4444;
+}

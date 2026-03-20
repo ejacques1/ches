@@ -1,0 +1,1038 @@
+{
+  "metadata": {
+    "title": "CHES Practice Exam Question Bank",
+    "description": "Practice questions for CHES exam preparation, organized by Area of Responsibility",
+    "total_questions": 72,
+    "areas_of_responsibility": {
+      "1": "Assessment of Needs and Capacity",
+      "2": "Planning",
+      "3": "Implementation",
+      "4": "Evaluation and Research",
+      "5": "Advocacy",
+      "6": "Communication",
+      "7": "Leadership and Management",
+      "8": "Ethics and Professionalism"
+    },
+    "area_distribution": {
+      "1 - Assessment of Needs and Capacity": 11,
+      "2 - Planning": 8,
+      "3 - Implementation": 3,
+      "4 - Evaluation and Research": 21,
+      "5 - Advocacy": 7,
+      "6 - Communication": 16,
+      "7 - Leadership and Management": 4,
+      "8 - Ethics and Professionalism": 2
+    },
+    "notes": "Cleaned version \u2014 flagged/truncated questions removed"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "In a priority population, the infant mortality rate and overall death rate for mothers with less than a high school education is almost twice as high as mothers with 13 or more years of education. These are examples of:",
+      "choices": {
+        "a": "health equity",
+        "b": "health determinants",
+        "c": "health capacity",
+        "d": "health disparities The healt"
+      },
+      "correct_answer": "d",
+      "area_id": 8,
+      "area_name": "Ethics and Professionalism",
+      "needs_review": false
+    },
+    {
+      "id": 4,
+      "question": "What type of health strategy would the health education specialist implement in the community?",
+      "choices": {
+        "a": "Position statement",
+        "b": "Ordinance",
+        "c": "Executive order",
+        "d": "Regulation"
+      },
+      "correct_answer": "b",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 5,
+      "question": "The health education specialist is tasked with gathering local data on these conditions. Which is the most useful rate to use?",
+      "choices": {
+        "a": "Incidence rate (rate of occurrence of new cases, conveys information about risk of contracting the disease, how fast it is spreading)",
+        "b": "Prevalence rate (proportion of cases in the population at a given time, indicates how widespread the disease is in a population, how far it is spreading)",
+        "c": "Attack rate",
+        "d": "Natality rate"
+      },
+      "correct_answer": "b",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 6,
+      "question": "Given a short time period to collect data, which method takes the least amount of time?",
+      "choices": {
+        "a": "Interviews",
+        "b": "Focus groups",
+        "c": "Delphi technique",
+        "d": "Quantitative surveys"
+      },
+      "correct_answer": "b",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 8,
+      "question": "Which of the following methods is best to measure actual use of the trail over the period of a week?",
+      "choices": {
+        "a": "Nominal group process",
+        "b": "Surveys",
+        "c": "Focus groups",
+        "d": "Observation"
+      },
+      "correct_answer": "b",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 9,
+      "question": "If the health education specialist aggregates the data, which cognitive process of qualitative research are they focusing on?",
+      "choices": {
+        "a": "Synthesizing",
+        "b": "Comprehending",
+        "c": "Theorizing",
+        "d": "Observation"
+      },
+      "correct_answer": "d",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 11,
+      "question": "The health education specialist would then need to find other evidence that the behaviors occurred or did not occur using:",
+      "choices": {
+        "a": "Proxy measures",
+        "b": "Multistep written surveys",
+        "c": "Selfassessments",
+        "d": "Telephone interviews Print material was selected as the appropriate way to p"
+      },
+      "correct_answer": "c",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 12,
+      "question": "The first step in planning the specific materials to be developed is to:",
+      "choices": {
+        "a": "Define the audience for the material",
+        "b": "Develop goals and objectives for the material",
+        "c": "Develop material content and graphics",
+        "d": "Gather information about the audience for the material Which represents primary sources that co"
+      },
+      "correct_answer": "a",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 14,
+      "question": "Before planning the fire prevention intervention the health education specialist should first determine the:",
+      "choices": {
+        "a": "Population at risk",
+        "b": "Life expectancy in the community",
+        "c": "Point source epidemic curve",
+        "d": "Informal interviews, observations, and surveys"
+      },
+      "correct_answer": "d",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 15,
+      "question": "The suspected cause of illness is associated with cruising on this ocean liner. Health authorities need to know the number of all passengers who became ill, as well as those who traveled on the ocean liner. Which rate should the health education specialist calculate to provide information to help authorities?",
+      "choices": {
+        "a": "Prevalence rate",
+        "b": "Attack rate",
+        "c": "Fatality rate",
+        "d": "Causespecific mortality rate"
+      },
+      "correct_answer": "a",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 16,
+      "question": "The health education specialist explains the solution is not the simple because: a. Sometimes behaviors are influenced by other factors, such as lack of access to healthy food, that are out of the person's control. b. Attitudes are the only important factor to consider when designing obesity prevention or treatment programs. c.Access to healthcare is more important than behaviors when weighing factors related to obesity treatment d. There are other behaviors more important when trying to decrease rates of obesity in the community Which of the following is the first step in designing a survey?",
+      "choices": {
+        "a": "determining the objectives of the survey",
+        "b": "determining the questions to be used",
+        "c": "determining the types of skills to be used",
+        "d": "determining the specific data to be collected"
+      },
+      "correct_answer": "b",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 18,
+      "question": "A health education specialist needs to determine specific alcohol, tobacco, and other drug use prevention needs and immediately prioritize those needs with a few experts from the priority population. Which primary data collection technique would be the best to use in this scenario?",
+      "choices": {
+        "a": "Nominal group process",
+        "b": "Focus group",
+        "c": "Community forum",
+        "d": "Electronic interviews Smoking bans in restaurants are which type of str"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 23,
+      "question": "Which of the following accomplishe d this task?",
+      "choices": {
+        "a": "SMOG assessment",
+        "b": "Logic model",
+        "c": "SWOT analysis",
+        "d": "advisory board"
+      },
+      "correct_answer": "d",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 29,
+      "question": "Among program participants, smoking rates will decrease by 35% in 12 months is an example of a/an:",
+      "choices": {
+        "a": "behavioral objective",
+        "b": "learning objective",
+        "c": "administrative objective",
+        "d": "environmental objective By 2018, volunteers will distribute information fl"
+      },
+      "correct_answer": "b",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 33,
+      "question": "The implementation team needs to know their tasks and associated due dates, and the health education specialist needs a relatively simple way to track the team's projected and actual task completion progress. To meet both needs, as well as to identify and prioritize all of tasks needed for full implementation, the health education specialist creates a:",
+      "choices": {
+        "a": "CPM chart",
+        "b": "logic chart",
+        "c": "TDTL chart",
+        "d": "GANTT chart"
+      },
+      "correct_answer": "c",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 34,
+      "question": "Which level of prevention are the screenings?",
+      "choices": {
+        "a": "diagnostic",
+        "b": "primary",
+        "c": "tertiary",
+        "d": "secondary"
+      },
+      "correct_answer": "a",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 39,
+      "question": "However, community members are more concerned about drug use in the community. In this example, drug use is a:",
+      "choices": {
+        "a": "normative need",
+        "b": "actual need",
+        "c": "perceived need",
+        "d": "political need Program planning begins with:"
+      },
+      "correct_answer": "b",
+      "area_id": 7,
+      "area_name": "Leadership and Management",
+      "needs_review": false
+    },
+    {
+      "id": 43,
+      "question": "According to which theory or model do people assess the threat of an emerging disease by assessing their perceived susceptibility against the severity of the disease?",
+      "choices": {
+        "a": "Diffusion of Innovations",
+        "b": "Social Cognitive theory",
+        "c": "Health Belief Model",
+        "d": "educational"
+      },
+      "correct_answer": "d",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 44,
+      "question": "A health education specialist is considering how people might adopt a program in order to understand how best to tailor specific messages. If the health education specialist wants to get the first people to adopt the program using the Diffusion of Innovations, which strategy might be best?",
+      "choices": {
+        "a": "Show the audience how most people have been enjoying the program",
+        "b": "Focus on how new and different the program is from what exists",
+        "c": "Wait for the opinion leaders to adopt",
+        "d": "stating the purpose of the lesson"
+      },
+      "correct_answer": "d",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 45,
+      "question": "Which of the following statements about informed consent is true?",
+      "choices": {
+        "a": "It only has to be completed when a health education specialist is working with children or adolescents",
+        "b": "It explains the benefits, risks, and participation is voluntary and may be terminated at any time",
+        "c": "It protects the health education specialist in cases of negligence from being sued by participants who were harmed",
+        "d": "It is necessary for medical research, but not behaviorfocused health education programs Health departments and worksites are implementin g a new health education/"
+      },
+      "correct_answer": "c",
+      "area_id": 8,
+      "area_name": "Ethics and Professionalism",
+      "needs_review": false
+    },
+    {
+      "id": 48,
+      "question": "Which law should the health education specialist review and consider when developing a website?",
+      "choices": {
+        "a": "Section 508 of the Rehabilitatio n Act",
+        "b": "Plain Language Act",
+        "c": "Title IX Act",
+        "d": "Program components being implemented in the correct order"
+      },
+      "correct_answer": "d",
+      "area_id": 3,
+      "area_name": "Implementation",
+      "needs_review": false
+    },
+    {
+      "id": 49,
+      "question": "Health education specialists and communicati on specialists plan to use earned media and social media to educate local community members about the outbreak. What should the health education specialists do first?",
+      "choices": {
+        "a": "Pick a theory or model to use",
+        "b": "Identify the audience",
+        "c": "Check for available funds",
+        "d": "Find partners to help"
+      },
+      "correct_answer": "c",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 50,
+      "question": "What is the appropriate way to proceed?",
+      "choices": {
+        "a": "Stop the intervention and rework the entire program in response to the problematic lesson",
+        "b": "Keep implementin g the lesson as planned, regardless of whether the learners understand it",
+        "c": "Adapt the lesson to the learners' needs so they are able to understand the information or skill",
+        "d": "Ignore the lesson and move to the next lesson in the program"
+      },
+      "correct_answer": "a",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 51,
+      "question": "Some of the levels will take substantially more time to target. Rather than wait for all aspects of the intervention to be ready, the agency looks to begin with one level and then will add in other levels over time. This is an example of:",
+      "choices": {
+        "a": "Phasing in",
+        "b": "Pilot testing",
+        "c": "Total implementati on",
+        "d": "Primary strategies To deal with the greatest drawback to a multilevel s"
+      },
+      "correct_answer": "b",
+      "area_id": 3,
+      "area_name": "Implementation",
+      "needs_review": false
+    },
+    {
+      "id": 53,
+      "question": "The health education specialist would also like to track actual accomplishm ent of these tasks using this same tool. Which of the following methods would be the most useful?",
+      "choices": {
+        "a": "Progress model",
+        "b": "Logic model",
+        "c": "Activity log",
+        "d": "GANTT chart"
+      },
+      "correct_answer": "c",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 55,
+      "question": "Which of the following actions creates the greatest likelihood for sustainability ?",
+      "choices": {
+        "a": "Identify partners and stakeholders who can help with sustainability during the planning process",
+        "b": "Once the program has been evaluated, modify it, and then implement it gain before funding ceases",
+        "c": "After the program has been ebaluted, identify stakeholders or partners who can help with sustainability",
+        "d": "Attempt to attain political support with the evaluation results Which one of the following is typically considered a good reason for a public health agen"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 57,
+      "question": "The health coach decides to use which of the following approaches/ theoretical orientation to counseling in order to meet this specific client need?",
+      "choices": {
+        "a": "Exploratory counseling",
+        "b": "Clientcentered counseling",
+        "c": "Behavioral counseling",
+        "d": "Counseling for decisionmaking To help improve intervention fidelity, a heal"
+      },
+      "correct_answer": "c",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 58,
+      "question": "Which of the Which of the following os a SMART training objective?",
+      "choices": {
+        "a": "Participants will report all cases of sexual misconduct by the end of the session.",
+        "b": "Participants will increase their knowledge of sexual misconduct by the end of the session",
+        "c": "Participants will be able to list two types of sexual misconduct",
+        "d": "Training participants will be able to list three resources for patients who report sexual misconduct by the end of the training session Sce"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 59,
+      "question": "A health education specialist is working with a community agency to implement an obesity prevention program in the community. They have decided BMI will be measured to assess rates of obesity at baseline and that one year, physical activity recalls and dietary logs to assess behavior weekly during the six-month program, and surveys to assess attitudes at the beginning and end of the program. The evaluator will assess fidelity and acceptability of the intervention throughout the intervention. If the health education specialist created a logic model for scenario B, which outcomes would be considered short-term outcomes?",
+      "choices": {
+        "a": "Attitudes",
+        "b": "Physical activity and diet",
+        "c": "Feasibility and acceptability",
+        "d": "BMI As a health education specialist monitors program implementati on, he/she f"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 65,
+      "question": ", and AmericanIndian tribe, and the Tribal Health Organization to implement a diabetes prevention program. Two-day training is being planned for the community health workers to ensure proper program delivery. What should the trainers do to create an inclusive learning environment ?",
+      "choices": {
+        "a": "Obtain leadership approval to offer the training",
+        "b": "Build trust and respect between the learners and instructor(s)",
+        "c": "Pay for food and travel to the training for all participants",
+        "d": "Offer the training only during the working hours"
+      },
+      "correct_answer": "b",
+      "area_id": 7,
+      "area_name": "Leadership and Management",
+      "needs_review": false
+    },
+    {
+      "id": 72,
+      "question": "The person delivering the program decides to delete some content to make it fit. This is an example of:",
+      "choices": {
+        "a": "Evaluation",
+        "b": "Fidelity",
+        "c": "Validity",
+        "d": "Reliability"
+      },
+      "correct_answer": "c",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 75,
+      "question": "Which of the following may be a secondary data option to consider?",
+      "choices": {
+        "a": "Randomly sampling the priority population",
+        "b": "Conducting a survey with the priority population",
+        "c": "Pilot testing an interview with family members and coworkers",
+        "d": "Searching federal, state, city and county open portals The most critical step in the implementati on process is"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 78,
+      "question": "Which of the following is a proven method to create a timeline and plan for the intervention?",
+      "choices": {
+        "a": "Critical path method",
+        "b": "Epidemiolog y curve",
+        "c": "Weekly program meetings",
+        "d": "Searching federal, state, city and county open portals"
+      },
+      "correct_answer": "d",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 79,
+      "question": "When selecting strategies, which of the following should the health educator do first? A. Do a literature search to find the best program regardless of audience B. Know their audience and what they have access to Use social media and other popular techniques D. Convene the agencies to discuss what strategies they think are best Program planning begins with:",
+      "choices": {
+        "a": "A measuremen t of social marketing processes",
+        "b": "An identification of the specific focus of an intervention",
+        "c": "An assessment of existing health needs and problems",
+        "d": "The creation of program and learning objectives Which section of an original research paper presents evidenc"
+      },
+      "correct_answer": "c",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 82,
+      "question": "Though all sections of the report for clarity and content, on which sections should the health education specialist spend the most time, since it likely will be read more closely by stakeholders ?",
+      "choices": {
+        "a": "Methods",
+        "b": "Literature review",
+        "c": "Conclusions",
+        "d": "Introduction A heath education specialist gives data from an evalua"
+      },
+      "correct_answer": "a",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 84,
+      "question": "The evaluator will assess fidelity and acceptability of the intervention throughout the intervention. Which measuremen ts are parts of a formative evaluation?",
+      "choices": {
+        "a": "BMI only",
+        "b": "BMI, Physical activity, diet and attitudes",
+        "c": "Diet and physical activity",
+        "d": "Fidelity and acceptability"
+      },
+      "correct_answer": "c",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 85,
+      "question": "Which of the following questions would achieve this level of measuremen t?",
+      "choices": {
+        "a": "Do you smoke?",
+        "b": "Do you smoke 110 cigarettes, 1120, or 2030 cigarettes per day?",
+        "c": "How many cigarettes do you smoke per day?",
+        "d": "Social media"
+      },
+      "correct_answer": "d",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 86,
+      "question": "A health education specialist does not have additional staff to assist with data collection, data entry, or analysis, and has a tight timeline for data collection and analysis. Which of the following is a feasible method for the health education specialist to collect data on attitudes toward anti smoking legislation in a region?",
+      "choices": {
+        "a": "A webbased qualitative survey",
+        "b": "A mailed quantitative survey",
+        "c": "A webbased quantitative survey",
+        "d": "A telephone survey"
+      },
+      "correct_answer": "b",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 90,
+      "question": "The evaluator will assess fidelity and except ability of the intervention throughout the intervention. Which measuremen ts are part of the summative evaluation?",
+      "choices": {
+        "a": "BMI only",
+        "b": "BMI, physical, activity, diet and attitudes",
+        "c": "Fidelity and acceptability",
+        "d": "Diet and physical activity"
+      },
+      "correct_answer": "c",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 91,
+      "question": "However, the original instrument was used in a college population. In order to use the instrument, the health education specialist must:",
+      "choices": {
+        "a": "establish validity and reliability for the modified instrument in the high school population.",
+        "b": "Modify the instrument and then proceed with data collection for evaluation.",
+        "c": "Not modify the instrument, since two populations are similar.",
+        "d": "Realize modifying an instrument makes it invalid, and this is not a proper procedure for data collection."
+      },
+      "correct_answer": "b",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 92,
+      "question": "The health educator is looking to randomly select a small number of participants and assess their individual attitudes toward dietary behavior change and their dietary behavior. Which of the following data collection methods would be best to get the largest response rate in the sample?",
+      "choices": {
+        "a": "Surveys administered in person",
+        "b": "Webbased surveys",
+        "c": "Mailed surveys",
+        "d": "Retain scales to cover an entire domain, rather than select one question for a complex domain"
+      },
+      "correct_answer": "d",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 94,
+      "question": "If the health education specialist wants to get the first people to adopt the program using the Diffusion of Innovations Theory, which strategy might be best?",
+      "choices": {
+        "a": "show the audience how most people have been enjoying the program",
+        "b": "focus on how new and different the program is from what currently exists",
+        "c": "wait for the opinion leaders to adopt",
+        "d": "focus on how the program adheres to social norms"
+      },
+      "correct_answer": "c",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 96,
+      "question": "Which of the following is true about successful partnerships:",
+      "choices": {
+        "a": "specific indicators related only to the program can be used to define success.",
+        "b": "reports, memorandu ms, and newsletters are the best ways to establish and maintain communicati on within the partnership",
+        "c": "constituency relations through unidirectional communicati on are important to the viability of an organization that values cooperation.",
+        "d": "Effective communicati ons should include feedback loops through which intentions, ideas, and information can be exchanged"
+      },
+      "correct_answer": "c",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 97,
+      "question": "Community gardens are planned for empty lots, and local convenience stores have agreed to begin selling fresh fruits and vegetables. To assist families, mobile devices will be given out and used to help deliver messages and tips, as well as to collect data. Additionally, community leaders have pledged to focus on making the community safe for physical activity. Volunteers are mapping out walking routes to encourage families to walk together. Partnerships have formed and memorandu ms of understandin g have been drafted. Which of the following would be considered an infrastructure /supply need?",
+      "choices": {
+        "a": "Family participation",
+        "b": "Partnerships",
+        "c": "Mobile devices",
+        "d": "Community leaders"
+      },
+      "correct_answer": "c",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 104,
+      "question": "Which approach to organization al change is occurring?",
+      "choices": {
+        "a": "Revolutionar y",
+        "b": "Evolutionary",
+        "c": "Regulatory",
+        "d": "Reactionary"
+      },
+      "correct_answer": "b",
+      "area_id": 7,
+      "area_name": "Leadership and Management",
+      "needs_review": false
+    },
+    {
+      "id": 106,
+      "question": "After discovering a breach of the programs data storage system, what is the managers most pressing ethical issue?",
+      "choices": {
+        "a": "Equity",
+        "b": "Beneficence",
+        "c": "Transparency",
+        "d": "Confidentiali ty"
+      },
+      "correct_answer": "a",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 107,
+      "question": "Which of the following can be used to achieve this?",
+      "choices": {
+        "a": "GIS mapping",
+        "b": "prevalence rates",
+        "c": "Assets listed by address",
+        "d": "Effective communication s should include feedback loops through which intentions, ideas, and information can be exchanged"
+      },
+      "correct_answer": "d",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 109,
+      "question": "A process that is used in organization s, similar to a needs assessment, assesses assumptions and values related to health education/promotion. This is a:",
+      "choices": {
+        "a": "Cultural audit",
+        "b": "Strategy assessment",
+        "c": "Strategic plan",
+        "d": "Asset map"
+      },
+      "correct_answer": "b",
+      "area_id": 7,
+      "area_name": "Leadership and Management",
+      "needs_review": false
+    },
+    {
+      "id": 111,
+      "question": "However, the community supports the partnership, and both agencies enjoy working together on the program. What is likely to be the finding of the valuation report?",
+      "choices": {
+        "a": "Because both agencies enjoy working together, the program should continued",
+        "b": "Because the community supports the partnership, it should be continued.",
+        "c": "The partnership is not costeffective, and should be reexamined",
+        "d": "The program should be repeated to see if it is more successful the second time"
+      },
+      "correct_answer": "b",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 115,
+      "question": "The most appropriate bibliographic database to search is:",
+      "choices": {
+        "a": "MEDLINE",
+        "b": "EBMR",
+        "c": "CHID",
+        "d": "ERIC A local health department has decided to adopt an ev"
+      },
+      "correct_answer": "a",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 116,
+      "question": "In the process of adapting the materials to make them more suitable for the population, the health education specialist should be cautious to:",
+      "choices": {
+        "a": "Change the core elements that make the program effective",
+        "b": "Modify materials to fit the population's culture, age, and content",
+        "c": "Substitute statistics for other racial or ethnic populations",
+        "d": "Tailor instructions, incentives, or activities to audience"
+      },
+      "correct_answer": "c",
+      "area_id": 3,
+      "area_name": "Implementation",
+      "needs_review": false
+    },
+    {
+      "id": 117,
+      "question": "Teen Pregnancy Place, which provides a discussion board where pregnant and parenting teens can obtain advice and make friends online. It is unclear who developed the material or sponsors the site. A fact sheet regarding the weekly develop,ent of a fetus is provided, but no references are cited for the information it contains. A links page directs visitors to other websites for resources, services, and products related to pregnancy and parenting. Visitors to the website should assume that:",
+      "choices": {
+        "a": "The developer has expertise in teen pregnancy",
+        "b": "All of the information could be inaccurate",
+        "c": "The discussion board is a valid source of information",
+        "d": "Confidentiality"
+      },
+      "correct_answer": "d",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 118,
+      "question": "Which organization is reliable source for data related to disabilities resulting from automobile crashes that would be used health education program planning?",
+      "choices": {
+        "a": "National Highway Traffic Safety Administratio n",
+        "b": "American Automobile Association",
+        "c": "Occupation Safety and Health Administratio n",
+        "d": "Health Care Financing Administratio n"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 120,
+      "question": "Which of the following resources would be the best database to find mental health research articles?",
+      "choices": {
+        "a": "HaPI",
+        "b": "CHID",
+        "c": "Psychinfo",
+        "d": "MEDLINE"
+      },
+      "correct_answer": "a",
+      "area_id": 1,
+      "area_name": "Assessment of Needs and Capacity",
+      "needs_review": false
+    },
+    {
+      "id": 122,
+      "question": "What are the funding sources of the site? B. Is the information compatible with the community context? C.. Does it cite evidencebased references? D. What are the credentials of the content reviewers? After his partner was diagnosed with breast cancer, and older citizen of the community is overwhelme d by the amount of information on the topic on the Internet. He asks how to sort through the information to find reputable sources. One way to help him easily limit his searches to tell him to:",
+      "choices": {
+        "a": "Only visit sites that end in. gov .org or.edu",
+        "b": "Review the resources for the timeliness and research",
+        "c": "Review the intent of the website",
+        "d": "Find the author contact information."
+      },
+      "correct_answer": "c",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 123,
+      "question": "The health education specialist is looking for evidence - based interventions as a part of his/her planning process. The least helpful resource would be:",
+      "choices": {
+        "a": "US census data bases.",
+        "b": "Cochrane reviews",
+        "c": "Community guide to preventive services",
+        "d": "Help the client identify and understand their options"
+      },
+      "correct_answer": "d",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 125,
+      "question": "The health education specialist should refer them to which type of source for the most accurate information it is also relevant and useful to the coalition?",
+      "choices": {
+        "a": "A website a commercial pharmaceuti cal manufacturer",
+        "b": "Systematic review of the scientific literature",
+        "c": "Fact sheets from a federal health agency",
+        "d": "A block from social advocate"
+      },
+      "correct_answer": "a",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 126,
+      "question": "What is the most valid source of information to use?",
+      "choices": {
+        "a": "Prevention institute",
+        "b": "American Heart Association",
+        "c": "Centers for Medicare and Medicaid services",
+        "d": "ERIC"
+      },
+      "correct_answer": "d",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 127,
+      "question": "A health education specialist has collected some resources and drug use and prevention for various audiences. The CEO of a company would like to see information regarding prescription drug abuse. What is the best way to present this information to the CEO?",
+      "choices": {
+        "a": "An info graphic",
+        "b": "A pamphlet produced by NIDA",
+        "c": "A formal presentation",
+        "d": "A literature review"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 128,
+      "question": "Which database os best for this?",
+      "choices": {
+        "a": "SAMSHA",
+        "b": "HRSA",
+        "c": "HaPI",
+        "d": "MEDLINE"
+      },
+      "correct_answer": "b",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 131,
+      "question": "When choosing a policy or issue to advocate on with a legislator, which criteria should be considered first?",
+      "choices": {
+        "a": "How receptive the community or target population is to the proposed policy or advocacy effort",
+        "b": "If there have been any peerreviewed articles published on this issue or policy",
+        "c": "If advocating on the policy or issue would violate the code of ethics for health education",
+        "d": "If there is a potential funding for the proposed policy"
+      },
+      "correct_answer": "c",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 132,
+      "question": "Which of the following is a way to advocate for professional development in the field of health education?",
+      "choices": {
+        "a": "Develop a brochure on the diabetes management for patience",
+        "b": "Contact a legislator to support a no smoking policy",
+        "c": "Publish articles in peer reviewed journals on the importance of professional development",
+        "d": "Author's credentials, website's purpose and references"
+      },
+      "correct_answer": "d",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 133,
+      "question": "Which of the following is an example of grassroots advocacy?",
+      "choices": {
+        "a": "Donating money to a political candidate",
+        "b": "Contacting a policymaker to set up a meeting",
+        "c": "Drafting a position paper for a professional association",
+        "d": "Starting a community petition drive"
+      },
+      "correct_answer": "b",
+      "area_id": 5,
+      "area_name": "Advocacy",
+      "needs_review": false
+    },
+    {
+      "id": 134,
+      "question": "How might a health education specialist craft a message in order to target this person?",
+      "choices": {
+        "a": "Use peripheral stimuli such as pictures or video to increase attention",
+        "b": "Use the four P's of the social marketing to create a campaign",
+        "c": "Use Messages to trigger memories of previously having the flu",
+        "d": "Use social media post to encourage vaccination"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 135,
+      "question": "Which of the following ways is the best way to achieve this?",
+      "choices": {
+        "a": "Subscribe to a health education list serve",
+        "b": "Listen to podcast regarding health issues by experts in the field",
+        "c": "Call the state health department to request a mailing list of health educators",
+        "d": "Join a professional health education organization"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 136,
+      "question": "Which of the following statements contains accurate principles to address low health literacy?",
+      "choices": {
+        "a": "Assume that everyone read that the 12th grade level, since most people graduate from high school",
+        "b": "Present many health statistics, as people tend to understand number is better than words",
+        "c": "Try to fit everything on one page, even if it means making the font smaller than desired",
+        "d": "Use graphs or charts, rather than tables or numbers, to show rates of illness or injury"
+      },
+      "correct_answer": "c",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 137,
+      "question": "In the planning process, the health education specialist would like to use the social marketing model. If he/she takes into account the physiological impact of exercise for a sedentary person (such as muscle soreness), which of the four P's is the health education specialist addressing?",
+      "choices": {
+        "a": "Product",
+        "b": "Price",
+        "c": "Place",
+        "d": "Promotion"
+      },
+      "correct_answer": "b",
+      "area_id": 2,
+      "area_name": "Planning",
+      "needs_review": false
+    },
+    {
+      "id": 138,
+      "question": "Which delivery method would reach a broader audience?",
+      "choices": {
+        "a": "Producing a public service announceme nt for local radio",
+        "b": "Organizing a town hall meeting about secondhand smoke",
+        "c": "Developing an antismoking workplace wellness campaign",
+        "d": "Creating a fact sheet for patients at a health center"
+      },
+      "correct_answer": "c",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 140,
+      "question": "When starting the advocacy process, the health education specialist should develop:",
+      "choices": {
+        "a": "A fact sheet about the issue.",
+        "b": "A strategic plan.",
+        "c": "Smart objectives.",
+        "d": "Communicatio n channels"
+      },
+      "correct_answer": "d",
+      "area_id": 6,
+      "area_name": "Communication",
+      "needs_review": false
+    },
+    {
+      "id": 142,
+      "question": "What type of program evaluation is this considered?",
+      "choices": {
+        "a": "impact",
+        "b": "Process",
+        "c": "Outcome",
+        "d": "Summative"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 144,
+      "question": "A health education specialist collects data with a \"yes \"or \"no \"response option. This is what type of data?",
+      "choices": {
+        "a": "Ordinal",
+        "b": "Nominal",
+        "c": "Interval",
+        "d": "Ratio Communicati on aimed at patients with nonlife- thre"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    },
+    {
+      "id": 146,
+      "question": "In working In working with the community that has a large Spanishspeaking population, a health educator and gauges a layhealth worker early in the planning process to be sure that the program is planned, implemented , and evaluated appropriatel y. An advisory group is formed to assess the relevance of the program activities. These important steps or a way to help improve:",
+      "choices": {
+        "a": "Cultural competency",
+        "b": "Cultural identification",
+        "c": "Cultural norms",
+        "d": "Cultural assimilation"
+      },
+      "correct_answer": "a",
+      "area_id": 4,
+      "area_name": "Evaluation and Research",
+      "needs_review": false
+    }
+  ]
+}
