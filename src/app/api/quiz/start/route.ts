@@ -28,6 +28,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid quiz type" }, { status: 400 });
   }
 
+  // Clean up any incomplete attempts for this user and quiz type before starting a new one
+  const { data: incompleteAttempts } = await supabaseAdmin
+    .from("quiz_attempts")
+    .select("id")
+    .eq("user_id", user.id)
+    .eq("quiz_type", quiz_type)
+    .is("completed_at", null);
+
+  if (incompleteAttempts && incompleteAttempts.length > 0) {
+    const incompleteIds = incompleteAttempts.map((a) => a.id);
+    await supabaseAdmin.from("quiz_answers").delete().in("attempt_id", incompleteIds);
+    await supabaseAdmin.from("quiz_attempts").delete().in("id", incompleteIds);
+  }
+
   // Build question query — exclude correct_answer from response, exclude needs_review questions
   let query = supabaseAdmin
     .from("questions")
