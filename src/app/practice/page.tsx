@@ -5,23 +5,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { supabase } from "@/lib/supabase";
-import { AREAS_OF_RESPONSIBILITY, getAreaName, getScoreColor } from "@/lib/constants";
-
-interface QuestionCount {
-  area_id: number;
-  count: number;
-}
-
-interface AreaScore {
-  area_id: number;
-  percent: number;
-}
+import { AREAS_OF_RESPONSIBILITY, getScoreColor } from "@/lib/constants";
 
 export default function PracticePage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [questionCounts, setQuestionCounts] = useState<QuestionCount[]>([]);
-  const [areaScores, setAreaScores] = useState<AreaScore[]>([]);
+  const [questionCounts, setQuestionCounts] = useState<Record<number, number>>({});
+  const [areaScores, setAreaScores] = useState<Record<number, number>>({});
 
   useEffect(() => {
     const loadData = async () => {
@@ -31,52 +21,20 @@ export default function PracticePage() {
         return;
       }
 
-      // Get available question counts per area
-      const { data: questions } = await supabase
-        .from("questions")
-        .select("area_id")
-        .eq("is_preassessment", false)
-        .eq("needs_review", false);
+      try {
+        const res = await fetch("/api/practice-data", {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+          },
+        });
 
-      if (questions) {
-        const counts: Record<number, number> = {};
-        for (const q of questions) {
-          counts[q.area_id] = (counts[q.area_id] || 0) + 1;
+        if (res.ok) {
+          const data = await res.json();
+          setQuestionCounts(data.questionCounts || {});
+          setAreaScores(data.areaScores || {});
         }
-        setQuestionCounts(
-          Object.entries(counts).map(([k, v]) => ({ area_id: parseInt(k), count: v }))
-        );
-      }
-
-      // Get practice scores per area
-      const { data: attempts } = await supabase
-        .from("quiz_attempts")
-        .select("id")
-        .eq("user_id", session.user.id)
-        .in("quiz_type", ["area", "comprehensive"])
-        .not("completed_at", "is", null);
-
-      if (attempts && attempts.length > 0) {
-        const attemptIds = attempts.map((a) => a.id);
-        const { data: answers } = await supabase
-          .from("quiz_answers")
-          .select("area_id, is_correct")
-          .in("attempt_id", attemptIds);
-
-        if (answers) {
-          const areaMap: Record<number, { correct: number; total: number }> = {};
-          for (const ans of answers) {
-            if (!areaMap[ans.area_id]) areaMap[ans.area_id] = { correct: 0, total: 0 };
-            areaMap[ans.area_id].total++;
-            if (ans.is_correct) areaMap[ans.area_id].correct++;
-          }
-          setAreaScores(
-            Object.entries(areaMap).map(([k, v]) => ({
-              area_id: parseInt(k),
-              percent: v.total > 0 ? Math.round((100 * v.correct) / v.total) : 0,
-            }))
-          );
-        }
+      } catch {
+        // Silently fail
       }
 
       setLoading(false);
@@ -84,13 +42,8 @@ export default function PracticePage() {
     loadData();
   }, [router]);
 
-  const getCountForArea = (areaId: number) =>
-    questionCounts.find((c) => c.area_id === areaId)?.count ?? 0;
-
-  const getScoreForArea = (areaId: number) =>
-    areaScores.find((s) => s.area_id === areaId);
-
-  const totalPracticeQuestions = questionCounts.reduce((sum, c) => sum + c.count, 0);
+  const getCountForArea = (areaId: number) => questionCounts[areaId] ?? 0;
+  const totalPracticeQuestions = Object.values(questionCounts).reduce((sum, c) => sum + c, 0);
 
   if (loading) {
     return (
@@ -112,7 +65,7 @@ export default function PracticePage() {
           Choose a specific area to focus on, or take a comprehensive quiz across all areas.
         </p>
 
-        {/* Comprehensive Quiz - prominent */}
+        {/* Comprehensive Quiz */}
         <Link
           href="/quiz/comprehensive"
           className="block bg-york-red text-white rounded-xl p-6 mb-8 hover:bg-york-red-dark transition shadow-md"
@@ -135,7 +88,7 @@ export default function PracticePage() {
         <div className="grid gap-3">
           {AREAS_OF_RESPONSIBILITY.map((area) => {
             const count = getCountForArea(area.id);
-            const score = getScoreForArea(area.id);
+            const score = areaScores[area.id];
 
             return (
               <Link
@@ -153,9 +106,9 @@ export default function PracticePage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  {score && (
-                    <span className={`text-sm font-bold ${getScoreColor(score.percent)}`}>
-                      {score.percent}%
+                  {score !== undefined && (
+                    <span className={`text-sm font-bold ${getScoreColor(score)}`}>
+                      {score}%
                     </span>
                   )}
                   <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

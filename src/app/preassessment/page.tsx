@@ -15,7 +15,6 @@ interface AreaScore {
 }
 
 interface CompletedResult {
-  attempt_id: number;
   total_questions: number;
   correct_count: number;
   score_percent: number;
@@ -36,51 +35,21 @@ export default function PreassessmentPage() {
         return;
       }
 
-      // Check for completed pre-assessment
-      const { data: attempts } = await supabase
-        .from("quiz_attempts")
-        .select("*")
-        .eq("user_id", session.user.id)
-        .eq("quiz_type", "preassessment")
-        .not("completed_at", "is", null)
-        .order("completed_at", { ascending: false })
-        .limit(1);
+      try {
+        const res = await fetch("/api/preassessment-results", {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+          },
+        });
 
-      if (attempts && attempts.length > 0) {
-        const attempt = attempts[0];
-
-        // Get area scores
-        const { data: answers } = await supabase
-          .from("quiz_answers")
-          .select("area_id, is_correct")
-          .eq("attempt_id", attempt.id);
-
-        const areaMap: Record<number, { total: number; correct: number }> = {};
-        if (answers) {
-          for (const ans of answers) {
-            if (!areaMap[ans.area_id]) areaMap[ans.area_id] = { total: 0, correct: 0 };
-            areaMap[ans.area_id].total++;
-            if (ans.is_correct) areaMap[ans.area_id].correct++;
+        if (res.ok) {
+          const data = await res.json();
+          if (data.completed) {
+            setCompletedResult(data);
           }
         }
-
-        const area_scores = Object.entries(areaMap)
-          .map(([aId, d]) => ({
-            area_id: parseInt(aId),
-            total: d.total,
-            correct: d.correct,
-            percent: d.total > 0 ? Math.round((100 * d.correct) / d.total * 10) / 10 : 0,
-          }))
-          .sort((a, b) => a.area_id - b.area_id);
-
-        setCompletedResult({
-          attempt_id: attempt.id,
-          total_questions: attempt.total_questions,
-          correct_count: attempt.correct_count,
-          score_percent: attempt.score_percent,
-          completed_at: attempt.completed_at,
-          area_scores,
-        });
+      } catch {
+        // If API fails, just show the quiz
       }
 
       setLoading(false);
