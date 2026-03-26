@@ -117,12 +117,20 @@ export default function AdminPage() {
                 CHES Study Hub — York College Department of Health and Human Performance
               </p>
             </div>
-            <Link
-              href="/admin/questions"
-              className="bg-york-red text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-york-red-dark transition"
-            >
-              Manage Questions
-            </Link>
+            <div className="flex gap-2">
+              <Link
+                href="/admin/flashcards"
+                className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition"
+              >
+                Manage Flashcards
+              </Link>
+              <Link
+                href="/admin/questions"
+                className="bg-york-red text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-york-red-dark transition"
+              >
+                Manage Questions
+              </Link>
+            </div>
           </div>
 
           {/* Tabs */}
