@@ -80,12 +80,8 @@ export default function DashboardPage() {
         .limit(1);
 
       if (!preAttempts || preAttempts.length === 0) {
-        // Admins viewing as student don't need to take pre-assessment
-        if (profile?.is_admin) {
-          setLoading(false);
-          return;
-        }
-        router.push("/preassessment");
+        // Don't redirect — show dashboard with a banner instead
+        setLoading(false);
         return;
       }
 
@@ -239,6 +235,22 @@ export default function DashboardPage() {
           Welcome, {fullName || "Student"}
         </h1>
         <p className="text-gray-500 mb-6 text-sm">Your CHES exam preparation dashboard</p>
+
+        {/* Pre-assessment banner if not completed */}
+        {!hasPreassessment && (
+          <div className="bg-yellow-50 border border-yellow-300 rounded-xl p-5 mb-6">
+            <h2 className="font-semibold text-yellow-800 mb-1">Take Your Pre-Assessment</h2>
+            <p className="text-sm text-yellow-700 mb-3">
+              Start with a pre-assessment to identify your strengths and areas for growth across the 8 Areas of Responsibility.
+            </p>
+            <Link
+              href="/preassessment"
+              className="inline-block bg-york-red text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-york-red-dark transition"
+            >
+              Start Pre-Assessment
+            </Link>
+          </div>
+        )}
 
         {/* Overall Progress Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">

@@ -96,6 +96,9 @@ export default function Navbar() {
                 <Link href="/dashboard" className="text-sm text-gray-600 hover:text-york-red transition">
                   Dashboard
                 </Link>
+                <Link href="/practice" className="text-sm text-gray-600 hover:text-york-red transition">
+                  Practice
+                </Link>
                 <Link href="/preassessment" className="text-sm text-gray-600 hover:text-york-red transition">
                   Pre-Assessment
                 </Link>
@@ -158,6 +161,9 @@ export default function Navbar() {
                 <>
                   <Link href="/dashboard" className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded" onClick={() => setMenuOpen(false)}>
                     Dashboard
+                  </Link>
+                  <Link href="/practice" className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded" onClick={() => setMenuOpen(false)}>
+                    Practice
                   </Link>
                   <Link href="/preassessment" className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded" onClick={() => setMenuOpen(false)}>
                     Pre-Assessment
