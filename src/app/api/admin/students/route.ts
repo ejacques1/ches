@@ -42,9 +42,23 @@ export async function GET(req: NextRequest) {
   // Get all completed quiz attempts
   const { data: attempts } = await supabaseAdmin
     .from("quiz_attempts")
-    .select("id, user_id, quiz_type, score_percent, completed_at")
+    .select("id, user_id, quiz_type, area_id, score_percent, completed_at")
     .not("completed_at", "is", null)
     .order("completed_at", { ascending: false });
+
+  // Get all quiz answers for practice attempts to compute per-area scores for comprehensive quizzes
+  const practiceAttemptIds = (attempts || [])
+    .filter((a) => a.quiz_type === "area" || a.quiz_type === "comprehensive")
+    .map((a) => a.id);
+
+  let allAnswers: { attempt_id: string; area_id: number; is_correct: boolean }[] = [];
+  if (practiceAttemptIds.length > 0) {
+    const { data: answers } = await supabaseAdmin
+      .from("quiz_answers")
+      .select("attempt_id, area_id, is_correct")
+      .in("attempt_id", practiceAttemptIds);
+    allAnswers = answers || [];
+  }
 
   const students = (profiles || []).map((p) => {
     const userAttempts = attempts?.filter((a) => a.user_id === p.id) ?? [];
@@ -53,6 +67,24 @@ export async function GET(req: NextRequest) {
       (a) => a.quiz_type === "area" || a.quiz_type === "comprehensive"
     );
     const latestPractice = practiceAttempts[0];
+
+    // Build per-area practice scores from quiz_answers
+    const userPracticeIds = practiceAttempts.map((a) => a.id);
+    const userAnswers = allAnswers.filter((ans) => userPracticeIds.includes(ans.attempt_id));
+    const areaScores: Record<number, { correct: number; total: number }> = {};
+    for (const ans of userAnswers) {
+      if (!areaScores[ans.area_id]) areaScores[ans.area_id] = { correct: 0, total: 0 };
+      areaScores[ans.area_id].total++;
+      if (ans.is_correct) areaScores[ans.area_id].correct++;
+    }
+    const areas_practiced: { area_id: number; score: number }[] = [];
+    for (const [aId, data] of Object.entries(areaScores)) {
+      areas_practiced.push({
+        area_id: parseInt(aId),
+        score: data.total > 0 ? Math.round((100 * data.correct) / data.total) : 0,
+      });
+    }
+    areas_practiced.sort((a, b) => a.area_id - b.area_id);
 
     return {
       id: p.id,
@@ -63,6 +95,7 @@ export async function GET(req: NextRequest) {
       preassessment_score: preAttempt?.score_percent ?? null,
       practice_count: practiceAttempts.length,
       latest_practice_score: latestPractice?.score_percent ?? null,
+      areas_practiced,
     };
   });
 

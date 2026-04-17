@@ -7,6 +7,11 @@ import AdminGuard from "@/components/AdminGuard";
 import { supabase } from "@/lib/supabase";
 import { getAreaName, getScoreColor, getScoreBgColor } from "@/lib/constants";
 
+interface AreaPracticed {
+  area_id: number;
+  score: number;
+}
+
 interface StudentRow {
   id: string;
   full_name: string;
@@ -16,6 +21,7 @@ interface StudentRow {
   preassessment_score: number | null;
   practice_count: number;
   latest_practice_score: number | null;
+  areas_practiced: AreaPracticed[];
 }
 
 interface AreaScore {
@@ -314,65 +320,99 @@ export default function AdminPage() {
                   <thead>
                     <tr className="text-left text-gray-500 border-b bg-gray-50">
                       <th className="px-4 py-3 font-medium">Name</th>
-                      <th className="px-4 py-3 font-medium">Email</th>
                       <th className="px-4 py-3 font-medium">Role</th>
                       <th className="px-4 py-3 font-medium">Pre-Assessment</th>
-                      <th className="px-4 py-3 font-medium">Practice Attempts</th>
-                      <th className="px-4 py-3 font-medium">Latest Score</th>
+                      <th className="px-4 py-3 font-medium">Areas Practiced</th>
+                      <th className="px-4 py-3 font-medium">Avg Score</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filtered.map((s) => (
-                      <tr key={s.id} className={`border-b border-gray-50 hover:bg-gray-50 ${s.is_admin ? "bg-yellow-50" : ""}`}>
-                        <td className="px-4 py-3">
-                          {s.is_admin ? (
-                            <span className="font-medium text-gray-700">{s.full_name}</span>
-                          ) : (
-                            <Link
-                              href={`/admin/student/${s.id}`}
-                              className="text-york-red font-medium hover:underline"
+                    {filtered.map((s) => {
+                      const avgScore =
+                        s.areas_practiced && s.areas_practiced.length > 0
+                          ? Math.round(
+                              s.areas_practiced.reduce((sum, a) => sum + a.score, 0) /
+                                s.areas_practiced.length
+                            )
+                          : null;
+
+                      return (
+                        <tr key={s.id} className={`border-b border-gray-50 hover:bg-gray-50 ${s.is_admin ? "bg-yellow-50" : ""}`}>
+                          <td className="px-4 py-3">
+                            {s.is_admin ? (
+                              <span className="font-medium text-gray-700">
+                                {s.full_name}
+                                <span className="block text-xs text-gray-400 font-normal">{s.email}</span>
+                              </span>
+                            ) : (
+                              <Link
+                                href={`/admin/student/${s.id}`}
+                                className="text-york-red font-medium hover:underline"
+                              >
+                                {s.full_name}
+                                <span className="block text-xs text-gray-400 font-normal">{s.email}</span>
+                              </Link>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            <button
+                              onClick={() => toggleAdmin(s.id, s.is_admin)}
+                              className={`text-xs px-2.5 py-1 rounded-full font-medium transition ${
+                                s.is_admin
+                                  ? "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
+                                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                              }`}
                             >
-                              {s.full_name}
-                            </Link>
-                          )}
-                        </td>
-                        <td className="px-4 py-3 text-gray-600">{s.email}</td>
-                        <td className="px-4 py-3">
-                          <button
-                            onClick={() => toggleAdmin(s.id, s.is_admin)}
-                            className={`text-xs px-2.5 py-1 rounded-full font-medium transition ${
-                              s.is_admin
-                                ? "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
-                                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-                            }`}
-                          >
-                            {s.is_admin ? "Admin" : "Student"}
-                          </button>
-                        </td>
-                        <td className="px-4 py-3">
-                          {s.preassessment_score !== null ? (
-                            <span className={`font-semibold ${getScoreColor(s.preassessment_score)}`}>
-                              {s.preassessment_score}%
-                            </span>
-                          ) : (
-                            <span className="text-gray-400">Not taken</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3 text-gray-600">{s.practice_count}</td>
-                        <td className="px-4 py-3">
-                          {s.latest_practice_score !== null ? (
-                            <span className={`font-semibold ${getScoreColor(s.latest_practice_score)}`}>
-                              {s.latest_practice_score}%
-                            </span>
-                          ) : (
-                            <span className="text-gray-400">—</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
+                              {s.is_admin ? "Admin" : "Student"}
+                            </button>
+                          </td>
+                          <td className="px-4 py-3">
+                            {s.preassessment_score !== null ? (
+                              <span className={`font-semibold ${getScoreColor(s.preassessment_score)}`}>
+                                {s.preassessment_score}%
+                              </span>
+                            ) : (
+                              <span className="text-gray-400">Not taken</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            {s.areas_practiced && s.areas_practiced.length > 0 ? (
+                              <div className="flex flex-wrap gap-1.5">
+                                {s.areas_practiced.map((ap) => (
+                                  <span
+                                    key={ap.area_id}
+                                    className={`inline-flex items-center text-xs px-2 py-0.5 rounded-full font-medium ${
+                                      ap.score >= 80
+                                        ? "bg-green-100 text-green-700"
+                                        : ap.score >= 50
+                                        ? "bg-yellow-100 text-yellow-700"
+                                        : "bg-red-100 text-red-700"
+                                    }`}
+                                    title={`Area ${ap.area_id}: ${getAreaName(ap.area_id)} — ${ap.score}%`}
+                                  >
+                                    A{ap.area_id}: {ap.score}%
+                                  </span>
+                                ))}
+                              </div>
+                            ) : (
+                              <span className="text-gray-400">No practice yet</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3">
+                            {avgScore !== null ? (
+                              <span className={`font-semibold ${getScoreColor(avgScore)}`}>
+                                {avgScore}%
+                              </span>
+                            ) : (
+                              <span className="text-gray-400">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
                     {filtered.length === 0 && (
                       <tr>
-                        <td colSpan={6} className="px-4 py-8 text-center text-gray-400">
+                        <td colSpan={5} className="px-4 py-8 text-center text-gray-400">
                           No students found
                         </td>
                       </tr>
